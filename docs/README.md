@@ -1,104 +1,136 @@
-<h1>
-    <a href="https://www.dio.me/">
-     <img align="center" width="40px" src="https://hermes.digitalinnovation.one/assets/diome/logo-minimized.png"></a>
-    <span> Profiles README DIO</span>
-</h1>
+# 📘 Desafio: Programação Orientada a Objetos (POO) em Java  
+**Um estudo aprofundado sobre os pilares da Orientação a Objetos aplicado na prática**
 
-## Sobre o Projeto
-Página desenvolvida para fins didáticos para o curso **Contribuindo em um Projeto Open Source no GitHub** da [Digital Innovation One](https://www.dio.me/). Lembre-se de que Markdown é mais voltado para a documentação e apresentação de texto formatado, enquanto a remoção de bugs normalmente envolve a compreensão detalhada do código e o uso de ferramentas de desenvolvimento adequadas à linguagem de programação específica.
-
-[![Preview](https://img.shields.io/badge/Preview-000?style=for-the-badge&logo=github&logoColor=30A3DC)](https://digitalinnovationone.github.io/dio-lab-open-source/)
-
-```
-docs/
-├── assets/
-│   ├── css/
-│   │   └── styles.css
-│   └── js/
-│       └── scripts.js
-├── favicon.ico
-├── index.html
-└── README.md
-```
-
-## Tecnologias
-![HTML](https://img.shields.io/badge/HTML-000?style=for-the-badge&logo=html5&logoColor=30A3DC)
-![CSS](https://img.shields.io/badge/CSS-000?style=for-the-badge&logo=css3&logoColor=E94D5F)
-![JavaScript](https://img.shields.io/badge/JavaScript-000?style=for-the-badge&logo=javascript&logoColor=30A3DC)
-
-# 🚀 Minha Contribuição no Projeto Open Source – DIO Lab
-
-Este repositório faz parte do desafio **"Contribuindo em um Projeto Open Source"** da Digital Innovation One (DIO).  
-O objetivo é praticar o fluxo real de colaboração em projetos Open Source utilizando **Git** e **GitHub**.
+Este repositório faz parte do desafio **“Desmistificando a Programação Orientada a Objetos”**, onde o objetivo é explorar e aplicar os pilares fundamentais da POO utilizando Java.  
+Aqui, você encontrará explicações detalhadas, exemplos de código, abstrações reais e evoluções feitas sobre o repositório original.
 
 ---
 
-## 🌟 Sobre a Contribuição
+## 🧠 Sobre o Desafio
 
-Para este desafio, realizei os seguintes passos:
+O objetivo deste desafio é **praticar e compreender profundamente** os quatro pilares da Programação Orientada a Objetos:
 
-- 🌱 Fiz um **fork** do repositório oficial `digitalinnovationone/dio-lab-open-source`;
-- 📝 Adicionei meu **Profile README** conforme solicitado no lab;
-- 🔧 Organizei e ajustei o conteúdo seguindo o padrão da comunidade;
-- 🚀 Abri um **Pull Request (PR)** contribuindo com o projeto.
+- **Abstração**  
+- **Encapsulamento**  
+- **Herança**  
+- **Polimorfismo**
 
-Essa contribuição representa meu avanço no uso de Git/GitHub e minha primeira participação em projetos abertos.
+A proposta é pegar um problema real, transformá-lo em classes, objetos e comportamentos, e evoluir a solução conforme sua imaginação permitir.
 
----
-
-## 📂 O que contém neste repositório?
-
-Este repositório (meu fork) inclui:
-
-- Meu Profile README;
-- Ajustes pessoais feitos para o desafio;
-- Estrutura original do projeto, mantendo a proposta do lab.
+Além disso, o desafio incentiva o uso de **Fork** no repositório original — o que já foi feito — para facilitar a organização das evoluções.
 
 ---
 
-## 🔗 Link para o Repositório Original
+# 🧩 Conceitos Fundamentais da POO
 
-Caso queira ver o projeto principal:
-
-👉 https://github.com/digitalinnovationone/dio-lab-open-source
+Abaixo você encontra cada pilar da POO explicado com clareza, acompanhado de exemplos reais em Java para facilitar seu entendimento.
 
 ---
 
-## ⭐ Objetivo do Desafio
+## 🔹 1. Abstração  
 
-O foco é compreender na prática como funciona:
+A abstração consiste em **identificar elementos essenciais** do mundo real e representá-los como objetos.  
+É transformar algo complexo em um modelo simples.
 
-- Fork ➜ criar uma cópia do projeto  
-- Edição ➜ adicionar suas contribuições  
-- Commit ➜ registrar suas mudanças  
-- Pull Request ➜ propor a alteração para o repositório original  
+### ✔ Exemplo em Java:
 
-Esses passos são exatamente os mesmos utilizados por desenvolvedores do mundo todo.
+```java
+public abstract class Veiculo {
+    private String modelo;
+    private int ano;
 
----
+    public Veiculo(String modelo, int ano) {
+        this.modelo = modelo;
+        this.ano = ano;
+    }
 
-## 👩‍💻 Minha Experiência
+    public abstract void mover();
+}
 
-Esse desafio me ajudou a:
 
-- Entender melhor o fluxo de contribuição no GitHub;
-- Praticar versionamento;
-- Criar e organizar um README;
-- Me aproximar do mundo Open Source.
 
----
+``````
 
-## 📎 Meu Fork
+Aqui a classe Veiculo captura apenas o essencial: modelo, ano e o comportamento de se mover.
 
-🔗 **Link do meu fork:**  
-https://github.com/beladevduarte/dio-lab-open-source  
+🔹 2. Encapsulamento
 
----
+Encapsular é proteger os dados internos e permitir o acesso controlado através de métodos.
 
-## 📜 Licença
+✔ Exemplo:
 
-Segue mesma licença do projeto original.
+````
+public class ContaBancaria {
+    private double saldo;
 
----
+    public ContaBancaria(double saldoInicial) {
+        this.saldo = saldoInicial;
+    }
 
-✌️ *Obrigado por visitar meu fork!*
+    public void depositar(double valor) {
+        this.saldo += valor;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+}
+
+````
+A variável saldo é privada para evitar manipulação direta.
+
+🔹 3. Herança
+
+Herança permite que uma classe “filha” herde atributos e métodos de uma classe “pai”.
+
+✔ Exemplo:
+
+``````
+
+public class Carro extends Veiculo {
+    public Carro(String modelo, int ano) {
+        super(modelo, ano);
+    }
+
+    @Override
+    public void mover() {
+        System.out.println("O carro está se movendo.");
+    }
+}
+
+``````
+A classe Carro herda tudo de Veiculo e ainda sobrescreve o método mover().
+
+🔹 4. Polimorfismo
+
+Um mesmo método pode se comportar de diferentes maneiras dependendo do objeto.
+
+✔ Exemplo:
+
+``````
+
+public class Moto extends Veiculo {
+    public Moto(String modelo, int ano) {
+        super(modelo, ano);
+    }
+
+    @Override
+    public void mover() {
+        System.out.println("A moto está acelerando.");
+    }
+}
+``````
+E usando polimorfismo:
+
+````
+
+Veiculo v1 = new Carro("Civic", 2020);
+Veiculo v2 = new Moto("Hornet", 2012);
+
+v1.mover(); // O carro está se movendo.
+v2.mover(); // A moto está acelerando.
+
+````
+
+
+
